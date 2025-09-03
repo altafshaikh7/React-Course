@@ -4,7 +4,7 @@ import './Navbar.css'   // 👈 ye CSS file import karna mat bhoolna
 
 export default function Navbar(props) {
   return (
-    <nav className="navbar navbar-expand-lg custom-navbar">
+    <nav className="navbar navbar-expand-lg custom-navbar" >
       <div className="container-fluid">
         <a className="navbar-brand text-white" href="/">{props.title}</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
