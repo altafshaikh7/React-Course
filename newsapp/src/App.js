@@ -2,14 +2,16 @@
 import './App.css';
 
 import React, { Component } from 'react'
+import Navbar from './Components/Navbar';
+import News from './Components/News';
 
 export default class App extends Component {
-  c= 'altaf'
+ 
   render() {
     return (
       <div>
-        Hello my first classed based component!
-        {this.c}
+        <Navbar />
+        <News />
       </div>
     )
   }
