@@ -2,13 +2,245 @@ import React, { Component } from 'react'
 import NewsItem from './NewsItem'
 
 export class News extends Component {
+    articles =  [
+    {
+      "source": {
+        "id": null,
+        "name": "CBS Sports"
+      },
+      "author": "Cameron Salerno",
+      "title": "College football scores, live updates: Week 2 schedule features Texas, Illinois, Iowa State in action early - CBS Sports",
+      "description": "NCAA football scores, live updates and highlights from the full slate of Week 2 action on Saturday",
+      "url": "https://www.cbssports.com/college-football/news/college-football-scores-live-updates-schedule-week-2-ncaa-top-25-games-today/live/",
+      "urlToImage": "https://sportshub.cbsistatic.com/i/r/2025/09/06/7305204a-4933-4141-803c-f560220c8ac8/thumbnail/1200x675/b56c76edc19ad6164f8de180ba00312d/cy-hawk.png",
+      "publishedAt": "2025-09-06T18:00:17Z",
+      "content": "Week 2 of the 2025 college football season begins Saturday with a handful of intriguing matchups in the early window, and the main event -- which happens to be the only ranked-on-ranked game of the e… [+1799 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "NBCSports.com"
+      },
+      "author": "Mike Florio",
+      "title": "NFL will interview Quinshon Judkins this week - NBC Sports",
+      "description": "Judkins is not expected to land on paid leave.",
+      "url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/nfl-will-interview-quinshon-judkins-this-week",
+      "urlToImage": "https://nbcsports.brightspotcdn.com/dims4/default/0b62e2b/2147483647/strip/true/crop/4894x2753+0+5/resize/1440x810!/quality/90/?url=https%3A%2F%2Fnbc-sports-production-nbc-sports.s3.us-east-1.amazonaws.com%2Fbrightspot%2F50%2F8f%2Fa4498a6a4e6b9af4543eae62fb6e%2Fhttps-api-imagn.com%2Frest%2Fdownload%2FimageID%3D26737056",
+      "publishedAt": "2025-09-06T17:25:22Z",
+      "content": "The Browns and running back Quinshon Judkins have finally reached an agreement on a four-year deal. His first several days on the job, however, will include something other than meetings and practice… [+1041 chars]"
+    },
+    {
+      "source": {
+        "id": "entertainment-weekly",
+        "name": "Entertainment Weekly"
+      },
+      "author": "https://www.facebook.com/entertainmentweekly",
+      "title": "Matthew McConaughey snuck his son into audition for new movie by hiding famous last name - AOL.com",
+      "description": "Matthew McConaughey revealed that he snuck his son, Levi, into an audition to play his on-screen son in 'The Lost Bus' by hiding his last name from director Paul Greengrass.",
+      "url": "https://ew.com/matthew-mcconaughey-snuck-son-levi-audition-lost-bus-11804907",
+      "urlToImage": "https://ew.com/thmb/jOmd_EYjikqNupx4AtPLVPEBzMQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Matthew-McConaughey-Levi-McConaughey-080625-03-9c196148292d472a849ecfffa9f8f901.jpg",
+      "publishedAt": "2025-09-06T17:11:54Z",
+      "content": "Having a famous parent can get you places in Hollywood but so can pure talent, as Matthew McConaughey revealed that he snuck his son, Levi Alves McConaughey, into an audition to play his on-screen ki… [+3537 chars]"
+    },
+    {
+      "source": {
+        "id": "associated-press",
+        "name": "Associated Press"
+      },
+      "author": "Travis Loller",
+      "title": "U.S. says it will deport Kilmar Abrego Garcia to Eswatini because he fears deportation to Uganda - AP News",
+      "description": "Attorneys for Immigration and Customs Enforcement say they intend to send Kilmar Abrego Garcia to the African nation of Eswatini after he expressed a fear of deportation to Uganda. The Salvadoran man lived in Maryland for more than a decade before he was mist…",
+      "url": "https://apnews.com/article/kilmar-abrego-garcia-uganda-eswatini-el-salvador-249a5c86427d418eb2f527483bb515c9",
+      "urlToImage": "https://dims.apnews.com/dims4/default/e9c17e1/2147483647/strip/true/crop/3500x1969+0+182/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F4b%2F8c%2F053206fa193c0761e27a8c9561aa%2F07158ac2c45947348013738fd52ac134",
+      "publishedAt": "2025-09-06T17:10:00Z",
+      "content": "Attorneys for Immigration and Customs Enforcement said in a Friday letter that they intend to send Kilmar Abrego Garcia to the African nation of Eswatini after he expressed a fear of deportation to U… [+2390 chars]"
+    },
+    {
+      "source": {
+        "id": "the-washington-post",
+        "name": "The Washington Post"
+      },
+      "author": "Richard Sima",
+      "title": "If you use AI for therapy, here are 5 things experts recommend - The Washington Post",
+      "description": "Generative AI chatbots are available and accessible, and people are using them. Here are some best practices, as recommended by mental health experts.",
+      "url": "https://www.washingtonpost.com/wellness/2025/09/06/ai-chatbots-therapy-tips/",
+      "urlToImage": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/4CNZK2D4AWS7URZNGL4WDLYVIY.jpg&w=1440",
+      "publishedAt": "2025-09-06T17:00:00Z",
+      "content": "Many people are turning to generative artificial intelligence for answers to work or school questions. But some are also using it for a more personal and intimate kind of help: Therapy.\r\nWhile talkin… [+242 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "US Hyundai raid: South Korea vows support for citizens detained by ICE - BBC",
+      "description": "US immigration officials detained 475 workers on Thursday - most of them South Korean nationals - saying they were working illegally.",
+      "url": "https://www.bbc.com/news/articles/c5yvjnp295xo",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/8306/live/fbbb4c60-8b3c-11f0-a23b-03b8d466a85d.jpg",
+      "publishedAt": "2025-09-06T16:57:21Z",
+      "content": "South Korea's government has held an emergency meeting and vowed to swiftly respond to the arrests of hundreds of its citizens in a massive immigration raid at a Hyundai plant in the US.\r\nSeoul has d… [+3508 chars]"
+    },
+    {
+      "source": {
+        "id": "axios",
+        "name": "Axios"
+      },
+      "author": "Justin Kaufmann",
+      "title": "Trump threatens Chicago with \"Department of WAR\" ahead of planned crackdown - Axios",
+      "description": "The President posted a parody meme threatening the city, which is bracing for expanded ICE raids.",
+      "url": "https://www.axios.com/2025/09/06/trump-chicago-department-of-war-crackdown-immigration",
+      "urlToImage": "https://images.axios.com/1RLG27VEw0rU1pzmys4X_O_0WSw=/0x0:4500x2531/1366x768/2025/09/06/1757174059507.jpeg",
+      "publishedAt": "2025-09-06T16:41:28Z",
+      "content": "What they're saying: \"I love the smell of deportations in the morning,\" the president wrote on his Truth Social account, accompanied by an seemingly AI-generated photo of him dressed as Robert Duvall… [+2023 chars]"
+    },
+    {
+      "source": {
+        "id": "mashable",
+        "name": "Mashable"
+      },
+      "author": "Christian de Looper",
+      "title": "Don't expect the new AI Siri to debut at the Sept. 9 Apple event - Mashable",
+      "description": "A revamped Siri is coming…eventually.",
+      "url": "https://mashable.com/article/ai-siri-apple-event-2025",
+      "urlToImage": "https://helios-i.mashable.com/imagery/articles/0225WGkvHvRXMxUcDyYDqGa/hero-image.fill.size_1200x675.v1756487939.jpg",
+      "publishedAt": "2025-09-06T16:01:20Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": "cnn",
+        "name": "CNN"
+      },
+      "author": "Thomas Schlachter, Frank Nunns OConnell",
+      "title": "Angel Reese suspended by Chicago Sky after making comments ‘detrimental to the team’ - CNN",
+      "description": "Angel Reese has been suspended by the Chicago Sky following comments the forward made about her teammates, head coach and the organization.",
+      "url": "https://www.cnn.com/2025/09/06/sport/basketball-wnba-chicago-sky-angel-reese-suspended-intl",
+      "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2232943689.jpg?c=16x9&q=w_800,c_fill",
+      "publishedAt": "2025-09-06T15:37:00Z",
+      "content": "Angel Reese has been suspended by the Chicago Sky following comments she made about her teammates, head coach and the organization.\r\nThe forward will miss the first half of the Skys game on Sunday ag… [+2438 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "The Weather Channel"
+      },
+      "author": "The Weather Channel",
+      "title": "Interstellar Comet Grows Tail As It Hurtles Toward Earth - The Weather Channel",
+      "description": "The asteroid is expected to miss Earth by only 167 million miles.",
+      "url": "https://weather.com/science/space/news/2025-09-06-comet-grows-tail-headed-toward-earth",
+      "urlToImage": "https://s.w-x.co/0809_Comet.00_00_17_09.Still001.jpg",
+      "publishedAt": "2025-09-06T15:25:20Z",
+      "content": "This image composed from multiple exposures and provided by NSF's NOIRLab shows a comet streaking across a star field above the International Gemini Observatory on Cerro Pachon, near La Serena, Chile… [+978 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "Royal Catholic funeral for Duchess of Kent - BBC",
+      "description": "The Duchess of Kent's funeral, attended by the King and Queen, will be at Westminster Cathedral on September 16.",
+      "url": "https://www.bbc.com/news/articles/c1mx9vzmjy3o",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/6271/live/c4f37b20-8b24-11f0-ab0b-373eee7fb9da.jpg",
+      "publishedAt": "2025-09-06T14:19:21Z",
+      "content": "Sean CoughlanRoyal correspondent\r\nThe Duchess of Kent was praised for her kindness and interest in music\r\nThe funeral of the Duchess of Kent will be held at Westminster Cathedral on 16 September, wit… [+2789 chars]"
+    },
+    {
+      "source": {
+        "id": "nbc-news",
+        "name": "NBC News"
+      },
+      "author": "The Associated Press",
+      "title": "LGBTQ Catholics make Holy Year pilgrimage to Rome and celebrate a new sense of acceptance - NBC News",
+      "description": "Hundreds of LGBTQ+ Catholics and their families participated in a Holy Year pilgrimage to Rome on Saturday, celebrating a new level of acceptance in the Catholic Church after long feeling shunned and crediting Pope Francis with the change",
+      "url": "https://www.nbcnews.com/nbc-out/out-life-and-style/lgbtq-catholics-make-holy-year-pilgrimage-rome-celebrate-new-sense-acc-rcna229516",
+      "urlToImage": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2025-09/250906-Church-of-the-Gesu-ch-1007-99a651.jpg",
+      "publishedAt": "2025-09-06T14:18:26Z",
+      "content": "Hundreds of LGBTQ+ Catholics and their families participated in a Holy Year pilgrimage to Rome on Saturday, celebrating a new level of acceptance in the Catholic Church after long feeling shunned and… [+5355 chars]"
+    },
+    {
+      "source": {
+        "id": "the-times-of-india",
+        "name": "The Times of India"
+      },
+      "author": "TOI World Desk",
+      "title": "Coldplay kiss-cam fallout: Former Astronomer HR Kristin Cabot files for divorce - Times of India",
+      "description": "US News: Kristin Cabot, formerly of Astronomer, is divorcing Andrew Cabot, the CEO of Privateer Rum after her video with CEO Andy Byron went viral at a Coldpla",
+      "url": "https://timesofindia.indiatimes.com/world/us/coldplay-kiss-cam-fallout-former-astronomer-hr-kristin-cabot-files-for-divorce/articleshow/123736620.cms",
+      "urlToImage": "https://static.toiimg.com/thumb/msid-123736619,width-1070,height-580,imgsize-24666,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg",
+      "publishedAt": "2025-09-06T14:11:00Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "nj.com"
+      },
+      "author": "Sara Donnellan | NJ Advance Media for NJ.com",
+      "title": "An update on Lauryn Licari, whose mom anonymously cyberbullied her - NJ.com",
+      "description": "Lauryn Licari's own mother, Kendra Licari, anonymously cyberbullied her for over a year",
+      "url": "https://www.nj.com/entertainment/2025/09/an-update-on-lauryn-licari-whose-mom-anonymously-cyberbullied-her.html",
+      "urlToImage": "https://www.nj.com/resizer/v2/CB2HASO2NRB3HOY54EMVT6EXSE.png?auth=69399cc22bbfc0f7f68a25d3106510c20d23c3206a15c4a6f047c10f83393ed1&width=1280&quality=90",
+      "publishedAt": "2025-09-06T13:05:00Z",
+      "content": "The Netflix documentary Unknown Number: The High School Catfish tells the story of Lauryn Licari, whose own mother, Kendra Licari, anonymously cyberbullied her for over a year.\r\nLauryn was 13 when sh… [+3772 chars]"
+    },
+    {
+      "source": {
+        "id": "cbs-news",
+        "name": "CBS News"
+      },
+      "author": "Kerry  Breen",
+      "title": "A mom knew her toddler's frequent infections weren't normal. The rare diagnosis was devastating. - CBS News",
+      "description": "Emily Robichau said her family prepared for the worst when her 1-year-old son was diagnosed with a rare, aggressive tumor.",
+      "url": "https://www.cbsnews.com/news/malignant-rhabdoid-tumor-massachusetts-general-hospital-pediatric-cancer/",
+      "urlToImage": "https://assets2.cbsnewsstatic.com/hub/i/r/2025/09/05/52d28494-efb3-49a3-86a8-4566c3c5d37b/thumbnail/1200x630g2/58010b3a59e7f43e6642f9041824a303/cutest-baby-in-the-world.jpg",
+      "publishedAt": "2025-09-06T12:00:17Z",
+      "content": "Jonny Terrell was a healthy, happy baby — but a month before his first birthday, he came down with an infection. Days later, he was vomiting. Over the next few weeks, mom Emily Robichau took him to t… [+6374 chars]"
+    },
+    {
+      "source": {
+        "id": "cnn",
+        "name": "CNN"
+      },
+      "author": "Taylor Nicioli",
+      "title": "September’s full corn moon coincides with a total lunar eclipse. Here’s what to know - CNN",
+      "description": "September’s full moon will be accompanied by a total lunar eclipse that will be visible to much of the world. Here’s how to see this weekend’s celestial display.",
+      "url": "https://www.cnn.com/2025/09/06/science/lunar-eclipse-full-corn-moon",
+      "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2171977920.jpg?c=16x9&q=w_800,c_fill",
+      "publishedAt": "2025-09-06T11:30:00Z",
+      "content": "Many sky-gazers around the world will get the chance to see a dazzling celestial display this weekend a total lunar eclipse that could cause the moon to take on a deep reddish hue.\r\nThe lunar eclipse… [+4838 chars]"
+    },
+    {
+      "source": {
+        "id": "cnn",
+        "name": "CNN"
+      },
+      "author": "Chris Isidore",
+      "title": "This is why you MUST check your Powerball ticket, even if you know you didn’t win the $1.8 billion jackpot - CNN",
+      "description": "Chances are very good that if someone wins Saturday’s promised Powerball prize of $1.8 billion, they will cash in their ticket. But it’s not certain.",
+      "url": "https://www.cnn.com/2025/09/06/business/unclaimed-powerball-jackpot-winnings",
+      "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2233890808.jpg?c=16x9&q=w_800,c_fill",
+      "publishedAt": "2025-09-06T11:00:00Z",
+      "content": "Chances are very good that if someone wins Saturdays promised Powerball prize of $1.8 billion, they will cash in their ticket. But its not certain.\r\nNot every jackpot-winning ticket sold over the yea… [+3102 chars]"
+    }
+  ]
+     constructor(){
+        super();
+        console.log("Hello I am a constructor from NewsItem");
+        this.state={
+            articles:this.articles,
+            loading:false
+          
+        }
+    }
   render() {
     return (
       <div className='container my-3'>
         <h1>Latest News</h1>
         <div className="row">
           <div className="col-md-4">
-            <NewsItem title="News Title" description="News Description" imageUrl="..." newsUrl="..." />
+            <NewsItem title="News Title" description="News Description" imageUrl="https://sportshub.cbsistatic.com/i/r/2025/09/06/7305204a-4933-4141-803c-f560220c8ac8/thumbnail/1200x675/b56c76edc19ad6164f8de180ba00312d/cy-hawk.png" newsUrl="..." />
           </div>
           <div className="col-md-4">
             <NewsItem title="News Title" description="News Description" imageUrl="..." newsUrl="..." />
