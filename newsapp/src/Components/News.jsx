@@ -7,14 +7,15 @@ export class News extends Component {
         super();
         this.state={
             articles:[],
-            loading:false
+            loading:false,
+            page:1
           
         }
     }
 
    async componentDidMount(){
         console.log("cdm");
-        let url="https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=821549a63a364d22bf6bf6180051e91a&page=1&pageSize=20";
+        let url="https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=821549a63a364d22bf6bf6180051e91a&page=1&pageSize=20&page=1";
         let data= await fetch(url);
         let parsedData= await data.json()
         console.log(parsedData);
@@ -31,6 +32,10 @@ export class News extends Component {
             <NewsItem title={ element.title ? element.title.slice(0,35 ) : ""} description={ !element.description ? "" : element.description.slice(0, 70)} imageUrl={ !element.urlToImage ? "" : element.urlToImage} newsUrl={ !element.url ? "" : element.url} />
           </div>;
         })}
+      </div>
+      <div className="container d-flex justify-content-between">
+      <button type="button" class="btn btn-dark"> &larr; Previous</button>
+      <button type="button" class="btn btn-dark">Next &rarr;</button>
       </div>
       </div>
     )
